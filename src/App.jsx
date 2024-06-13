@@ -4,18 +4,10 @@ import Header from './components/Header'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
-import { createGlobalStyle } from 'styled-components'
 import Error from './pages/Error'
 import Footer from './components/Footer'
-const GlobalStyle = createGlobalStyle`
-* {
-  font-family: "Montserrat", sans-serif;
-}
-body {
-  margin: 0
-}
-`
-
+import GlobalStyle from './assets/style/Globalstyle'
+import Logement from './pages/Logement'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyle />
@@ -25,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/logement/:id" element={<Logement />} /> */}
+        <Route path="/logement/:id" element={<Logement />} />
       </Routes>
       <Footer />
     </Router>

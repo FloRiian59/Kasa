@@ -5,7 +5,7 @@ const HeaderStyle = styled.header`
   display: flex;
   background-color: white;
   color: black;
-  margin: 50px;
+  margin: 50px 100px 50px 100px;
 `
 const NavStyle = styled.nav`
   display: flex;

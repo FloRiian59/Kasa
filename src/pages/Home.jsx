@@ -1,6 +1,6 @@
 import Banner from '../components/Banner'
 import Thumb from '../components/Thumb'
-import datas from '../../src/data/logements.json'
+import logements from '../../src/data/logements.json'
 import styled from 'styled-components'
 
 const ContainerStyled = styled.div`
@@ -29,7 +29,7 @@ function Home() {
       <Banner />
       <ContainerStyled>
         <GaleryStyled>
-          <Thumb datas={datas} />
+          <Thumb logements={logements} />
         </GaleryStyled>
       </ContainerStyled>
     </div>

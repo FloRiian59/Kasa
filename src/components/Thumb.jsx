@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 const ImgStyled = styled.img`
   width: 340px;
   height: 340px;
@@ -15,20 +15,20 @@ const TitleStyled = styled.h3`
   font-size: 18px;
   font-weight: 700;
 `
-const CardStyled = styled.div`
+const CardStyled = styled(Link)`
   position: relative;
 `
-const Thumb = ({ datas }) => {
-  return datas.map((data) => (
-    <CardStyled key={data.id}>
-      <ImgStyled src={data.cover} alt={data.title} />
-      <TitleStyled>{data.title}</TitleStyled>
+const Thumb = ({ logements }) => {
+  return logements.map((logement) => (
+    <CardStyled to={`/logement/${logement.id}`} key={logement.id}>
+      <ImgStyled src={logement.cover} alt={logement.title} />
+      <TitleStyled>{logement.title}</TitleStyled>
     </CardStyled>
   ))
 }
 
 Thumb.propTypes = {
-  datas: PropTypes.array.isRequired,
+  logements: PropTypes.array.isRequired,
 }
 
 export default Thumb
