@@ -1,6 +1,8 @@
 import styled from 'styled-components'
-import DefautBgImg from '../../src/assets/bgImage2.jpg'
-import { Drawer } from '../components/Drawer'
+import DefautBgImg from '../../src/assets/image/bgImage2.jpg'
+import '../assets/style/About.css'
+import AboutData from '../data/about.json'
+import Collapse from '../components/Collapse'
 const ContainerBanner = styled.div`
   width: 100%;
   height: 250px;
@@ -26,7 +28,6 @@ const BannerStyle = styled.div`
   border-radius: 25px;
   box-shadow: 0px 4px 4px 0px #00000040;
 `
-
 function About() {
   return (
     <div>
@@ -34,7 +35,14 @@ function About() {
         <BannerImgStyle src={DefautBgImg} alt="background" />
         <BannerStyle></BannerStyle>
       </ContainerBanner>
-      <Drawer />
+      {AboutData.map((index) => {
+        // avec map on parcours le tableau 'AboutData' et pour chaque élément :
+        return (
+          <div key={index.id}>
+            <Collapse content={index.content} title={index.title} />
+          </div>
+        )
+      })}
     </div>
   )
 }

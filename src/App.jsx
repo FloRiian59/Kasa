@@ -8,6 +8,7 @@ import Error from './pages/Error'
 import Footer from './components/Footer'
 import GlobalStyle from './assets/style/Globalstyle'
 import Logement from './pages/Logement'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyle />

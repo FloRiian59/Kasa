@@ -5,7 +5,11 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Montserrat", sans-serif;
 }
 body {
-  margin: 0
+  margin: 0 ;
+  width: 100%;
+}
+#root {
+  width: 100%;
 }
 `
 export default GlobalStyle
