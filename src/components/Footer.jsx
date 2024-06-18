@@ -12,6 +12,13 @@ const ContainerStyled = styled.footer`
   margin: 0;
   gap: 30px;
   font-size: 24px;
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
+    justify-content: center;
+  }
 `
 function Footer() {
   return (

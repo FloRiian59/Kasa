@@ -1,40 +1,32 @@
 import styled from 'styled-components'
-import DefautBgImg from '../../src/assets/image/bgImage2.jpg'
 import '../assets/style/About.css'
 import AboutData from '../data/about.json'
 import Collapse from '../components/Collapse'
-const ContainerBanner = styled.div`
+import { SectionStyled } from '../components/Banner'
+import { ContainerStyled } from '../components/Banner'
+import { TitleStyled } from '../components/Banner'
+const ImageStyled = styled.div`
   width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-`
-
-const BannerImgStyle = styled.img`
-  width: 1240px;
-  height: 223px;
-  object-fit: cover;
+  height: 100%;
   border-radius: 25px;
-  position: absolute;
-`
-const BannerStyle = styled.div`
+  background-size: cover;
+  background-image: url('../../src/assets/image/bgImage2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1240px;
-  height: 223px;
-  background-color: #00000040;
-  position: absolute;
-  border-radius: 25px;
-  box-shadow: 0px 4px 4px 0px #00000040;
 `
 function About() {
   return (
     <div>
-      <ContainerBanner>
-        <BannerImgStyle src={DefautBgImg} alt="background" />
-        <BannerStyle></BannerStyle>
-      </ContainerBanner>
+      <SectionStyled>
+        <ContainerStyled>
+          <ImageStyled>
+            <TitleStyled style={{ backgroundColor: '#0000001a' }}></TitleStyled>
+          </ImageStyled>
+        </ContainerStyled>
+      </SectionStyled>
       {AboutData.map((index) => {
         // avec map on parcours le tableau 'AboutData' et pour chaque élément :
         return (

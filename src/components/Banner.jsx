@@ -1,45 +1,58 @@
 import styled from 'styled-components'
-import DefautBgImg from '../../src/assets/image/bgImage1.jpg'
 
-const ContainerBanner = styled.div`
+export const SectionStyled = styled.div`
   width: 100%;
   height: 250px;
   display: flex;
   justify-content: center;
 `
-
-const BannerImgStyle = styled.img`
+export const ContainerStyled = styled.div`
   width: 1240px;
   height: 223px;
-  object-fit: cover;
-  border-radius: 25px;
-  position: absolute;
+  display: flex;
+  @media (max-width: 1024px) {
+    margin: 0px 30px 0px 30px;
+  }
 `
-const BannerStyle = styled.div`
+const ImageStyled = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-size: cover;
+  background-image: url('../../src/assets/image/bgImage1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1240px;
-  height: 223px;
-  background-color: #00000087;
-  position: absolute;
-  border-radius: 25px;
-  box-shadow: 0px 4px 4px 0px #00000040;
 `
-const BannerTextStyle = styled.h1`
+export const TitleStyled = styled.h1`
+  color: white;
   font-size: 48px;
   font-weight: 700;
-  position: absolute;
-  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: #0000007d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `
 function Banner() {
   return (
-    <ContainerBanner>
-      <BannerImgStyle src={DefautBgImg} alt="background" />
-      <BannerStyle>
-        <BannerTextStyle>Chez vous, partout et ailleurs</BannerTextStyle>
-      </BannerStyle>
-    </ContainerBanner>
+    <SectionStyled>
+      <ContainerStyled>
+        <ImageStyled>
+          <TitleStyled>Chez vous, partout et ailleurs</TitleStyled>
+        </ImageStyled>
+      </ContainerStyled>
+    </SectionStyled>
   )
 }
 

@@ -8,8 +8,15 @@ body {
   margin: 0 ;
   width: 100%;
 }
-#root {
-  width: 100%;
+@media (max-width: 1024px) {
+  html {
+
+  }
+}
+@media (max-width: 768px) {
+  html {
+
+  }
 }
 `
 export default GlobalStyle

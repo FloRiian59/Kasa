@@ -6,7 +6,7 @@ const Collapse = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false) // Valeur par défaut = false
 
   const display = () => {
-    setIsOpen(!isOpen) // on définis setIsOpen comme étant l'inverse de isOpen
+    setIsOpen(!isOpen) // on définis setOpen comme étant l'inverse de setIsOpen (setIsOpen = false | isOpen = true)
   }
   return (
     // On affiche le collapse 'replié' par défaut et on l'ouvre au clique
@@ -15,7 +15,7 @@ const Collapse = ({ title, content }) => {
         <div className="collapse-dropdown">
           <h2 className="collapse-title">{title}</h2>
           <button onClick={display}>
-            {isOpen ? ( // condition de l'état du chevron, si contenue affiché chevron vers le haut, sinon chevron vers le bas
+            {isOpen ? ( // condition de l'état du chevron, si le contenue est affiché chevron vers le haut, sinon chevron vers le bas
               <i className="fa-solid fa-chevron-up"></i>
             ) : (
               <i className="fa-solid fa-chevron-down"></i>
