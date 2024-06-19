@@ -22,7 +22,11 @@ const Collapse = ({ title, content }) => {
             )}
           </button>
         </div>
-        {isOpen && ( // on affiche le contenue quand isOpen est égal à true
+        {isOpen ? (
+          <div className="frame extend">
+            <p className="collapse-content">{content}</p>
+          </div>
+        ) : (
           <div className="frame">
             <p className="collapse-content">{content}</p>
           </div>

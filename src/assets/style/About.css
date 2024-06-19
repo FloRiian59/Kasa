@@ -8,8 +8,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 25px;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .collapse-dropdown {
@@ -33,23 +33,37 @@
   text-align: left;
   color: black;
   margin-left: 15px;
+  overflow: hidden;
 }
+
 .frame {
   display: flex;
   background-color: #f6f6f6;
   width: 100%;
-  top: 0px;
-  left: 0px;
-  padding: 15px 0px 15px 0px;
+  position: relative;
+  z-index: -1;
+  max-height: 0px;
+  transition: all 1s;
+}
+.extend {
+  max-height: 1000px;
+  transition: all 1s ease-in;
 }
 .fa-solid {
   color: white;
   cursor: pointer;
   animation: none;
 }
-
 button {
   background-color: transparent;
   border: none;
   font-size: 25px;
+}
+@media (max-width: 1024px) {
+  .collapse-dropdown {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 768px) {
 }
