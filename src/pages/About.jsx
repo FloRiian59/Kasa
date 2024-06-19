@@ -19,7 +19,7 @@ const ImageStyled = styled.div`
 `
 function About() {
   return (
-    <div>
+    <div style={{ paddingBottom: '30px' }}>
       <SectionStyled>
         <ContainerStyled>
           <ImageStyled>
