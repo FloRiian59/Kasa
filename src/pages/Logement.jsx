@@ -4,7 +4,7 @@ import '../assets/style/Logement.css'
 import Collapse from '../components/Collapse'
 import ArrowLeft from '../assets/image/arrow-left.png'
 import ArrowRight from '../assets/image/arrow-right.png'
-
+import Rating from '../components/Rating'
 const LogementID = (id) => {
   return Logements.find((logement) => logement.id === id) // find va parcourir le tableau du fichier logement.json et renvoie le logement qui corespond a l'id du l'url (route)
 }
@@ -37,7 +37,7 @@ function Logement() {
               <div className="host-name">{logement.host.name}</div>
               <img src={logement.host.picture} className="host-picture" />
             </div>
-            <div className="rating-stars">{logement.rating}</div>
+            <Rating note={logement.rating} />
           </div>
         </div>
         <div className="container-dropdowns">

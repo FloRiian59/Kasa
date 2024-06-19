@@ -59,9 +59,7 @@
   border-radius: 50%;
   align-items: flex-end;
 }
-.rating-stars {
-  background-color: #ff6060;
-}
+
 .logement-tags {
   list-style: none;
   width: fit-content;
@@ -123,4 +121,22 @@
   right: 25px;
   top: 37%;
   cursor: pointer;
+}
+.rating-stars {
+  display: flex;
+  justify-content: space-between;
+  width: 98px;
+  height: 18px;
+}
+.fa-star {
+  width: 25px;
+  height: 25px;
+  font-size: 22px;
+  margin-left: 5px;
+}
+.full {
+  color: #ff6060;
+}
+.empty {
+  color: #e3e3e3;
 }
