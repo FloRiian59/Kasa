@@ -5,6 +5,7 @@ import Collapse from '../components/Collapse'
 import ArrowLeft from '../assets/image/arrow-left.png'
 import ArrowRight from '../assets/image/arrow-right.png'
 import Rating from '../components/Rating'
+import { useState } from 'react'
 const LogementID = (id) => {
   return Logements.find((logement) => logement.id === id) // find va parcourir le tableau du fichier logement.json et renvoie le logement qui corespond a l'id du l'url (route)
 }
@@ -14,13 +15,30 @@ function Logement() {
   const logement = LogementID(id)
   const tags = logement.tags
   const pictures = logement.pictures
+  const [slide, setSlide] = useState(0)
+
+  const nextSlide = () => {
+    setSlide(slide === pictures.length - 1 ? 0 : slide + 1)
+  }
+  const prevSlide = () => {
+    setSlide(slide === 0 ? pictures.length - 1 : slide - 1)
+  }
   return (
     <div className="container">
       <div className="container-content">
         <div className="arrows">
-          <img className="arrow-left" src={ArrowLeft} />
-          <img className="arrow-right" src={ArrowRight} />
-          <img className="logement-picture" src={pictures[0]} alt="Logements" />
+          <img className="arrow-left" src={ArrowLeft} onClick={prevSlide} />
+          <img className="arrow-right" src={ArrowRight} onClick={nextSlide} />
+          {pictures.map((item, index) => {
+            return (
+              <img
+                src={item}
+                alt="logements"
+                key={index}
+                className={slide === index ? 'slide' : 'slide slide-hidden'}
+              />
+            )
+          })}
         </div>
         <div className="main-content">
           <div className="container-description">

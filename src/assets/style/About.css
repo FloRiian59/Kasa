@@ -47,7 +47,7 @@
 }
 .extend {
   max-height: 100px;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in;
 }
 .fa-solid {
   color: white;
