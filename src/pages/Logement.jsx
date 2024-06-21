@@ -25,10 +25,8 @@ function Logement() {
   }
   return (
     <div className="container">
-      <div className="container-content">
-        <div className="arrows">
-          <img className="arrow-left" src={ArrowLeft} onClick={prevSlide} />
-          <img className="arrow-right" src={ArrowRight} onClick={nextSlide} />
+      <div className="container-carrousel">
+        <div className="carrousel">
           {pictures.map((item, index) => {
             return (
               <img
@@ -39,26 +37,38 @@ function Logement() {
               />
             )
           })}
+          <span className="slide-number">
+            {slide + 1}/{pictures.length}
+          </span>
+
+          <img className="arrow-left" src={ArrowLeft} onClick={prevSlide} />
+          <img className="arrow-right" src={ArrowRight} onClick={nextSlide} />
         </div>
-        <div className="main-content">
-          <div className="container-description">
+      </div>
+      <div className="container-informations">
+        <div className="container-content">
+          <div className="title-location">
             <div className="logement-title">{logement.title}</div>
             <div className="logement-location">{logement.location}</div>
-            <ul className="logement-tags">
-              {tags.map((tag, index) => {
-                return <li key={(tag, index)}>{tag}</li>
-              })}
-            </ul>
           </div>
-          <div className="container-host-rating">
-            <div className="container-host">
-              <div className="host-name">{logement.host.name}</div>
-              <img src={logement.host.picture} className="host-picture" />
-            </div>
-            <Rating note={logement.rating} />
+          <div className="container-host">
+            <div className="host-name">{logement.host.name}</div>
+            <img src={logement.host.picture} className="host-picture" />
           </div>
         </div>
-        <div className="container-dropdowns">
+      </div>
+      <div className="container-tags-rating">
+        <div className="tags-rating">
+          <ul className="logement-tags">
+            {tags.map((tag, index) => {
+              return <li key={(tag, index)}>{tag}</li>
+            })}
+          </ul>
+          <Rating note={logement.rating} />
+        </div>
+      </div>
+      <div className="container-dropdowns">
+        <div className="dropdowns">
           <div className="container-desc">
             <Collapse title="Description" content={logement.description} />
           </div>
