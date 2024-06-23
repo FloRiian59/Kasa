@@ -37,6 +37,7 @@ const LogoStyled = styled.svg`
     height: 100px;
   }
 `
+
 function Error() {
   return (
     <ContainerStyled>

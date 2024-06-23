@@ -16,55 +16,67 @@ function Logement() {
   const tags = logement.tags
   const pictures = logement.pictures
   const [slide, setSlide] = useState(0)
-
+  const length = pictures.length
   const nextSlide = () => {
     setSlide(slide === pictures.length - 1 ? 0 : slide + 1)
   }
   const prevSlide = () => {
     setSlide(slide === 0 ? pictures.length - 1 : slide - 1)
   }
+
   return (
     <div className="container">
       <div className="container-carrousel">
         <div className="carrousel">
-          {pictures.map((item, index) => {
-            return (
+          <div className="slides">
+            {pictures.map((item, index) => {
+              return (
+                <img
+                  src={item}
+                  alt="logements"
+                  key={index}
+                  className={slide === index ? 'slide' : 'slide-hidden'}
+                />
+              )
+            })}
+            {length > 1 && (
+              <span className="slide-number">
+                {slide + 1}/{pictures.length}
+              </span>
+            )}
+            {length > 1 && (
+              <img className="arrow-left" src={ArrowLeft} onClick={prevSlide} />
+            )}
+            {length > 1 && (
               <img
-                src={item}
-                alt="logements"
-                key={index}
-                className={slide === index ? 'slide' : 'slide slide-hidden'}
+                className="arrow-right"
+                src={ArrowRight}
+                onClick={nextSlide}
               />
-            )
-          })}
-          <span className="slide-number">
-            {slide + 1}/{pictures.length}
-          </span>
-
-          <img className="arrow-left" src={ArrowLeft} onClick={prevSlide} />
-          <img className="arrow-right" src={ArrowRight} onClick={nextSlide} />
+            )}
+          </div>
         </div>
       </div>
       <div className="container-informations">
         <div className="container-content">
-          <div className="title-location">
+          <div className="title-location-tags">
             <div className="logement-title">{logement.title}</div>
             <div className="logement-location">{logement.location}</div>
+            <div className="tags-rating">
+              <ul className="logement-tags">
+                {tags.map((tag, index) => {
+                  return <li key={(tag, index)}>{tag}</li>
+                })}
+              </ul>
+            </div>
           </div>
-          <div className="container-host">
-            <div className="host-name">{logement.host.name}</div>
-            <img src={logement.host.picture} className="host-picture" />
+          <div className="container-host-rating">
+            <div className="container-host">
+              <div className="host-name">{logement.host.name}</div>
+              <img src={logement.host.picture} className="host-picture" />
+            </div>
+            <Rating note={logement.rating} />
           </div>
-        </div>
-      </div>
-      <div className="container-tags-rating">
-        <div className="tags-rating">
-          <ul className="logement-tags">
-            {tags.map((tag, index) => {
-              return <li key={(tag, index)}>{tag}</li>
-            })}
-          </ul>
-          <Rating note={logement.rating} />
         </div>
       </div>
       <div className="container-dropdowns">
