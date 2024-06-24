@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from 'styled-components'
 
 export const SectionStyled = styled.div`
@@ -10,20 +11,18 @@ export const ContainerStyled = styled.div`
   width: 1240px;
   height: 223px;
   display: flex;
+  position: relative;
   @media (max-width: 1024px) {
     margin: 0px 30px 0px 30px;
   }
 `
-const ImageStyled = styled.div`
+const ImageStyled = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  background-size: cover;
-  background-image: url('../../src/assets/image/bgImage1.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   justify-content: center;
+  object-fit: cover;
   align-items: center;
 `
 export const TitleStyled = styled.h1`
@@ -32,10 +31,12 @@ export const TitleStyled = styled.h1`
   font-weight: 700;
   width: 100%;
   height: 100%;
-  background-color: #0000007d;
+  background-color: #0000005d;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  margin: 0;
   border-radius: 25px;
   @media (max-width: 1024px) {
     font-size: 36px;
@@ -44,13 +45,12 @@ export const TitleStyled = styled.h1`
     font-size: 24px;
   }
 `
-function Banner() {
+function Banner({ image, texte }) {
   return (
     <SectionStyled>
       <ContainerStyled>
-        <ImageStyled>
-          <TitleStyled>Chez vous, partout et ailleurs</TitleStyled>
-        </ImageStyled>
+        <ImageStyled src={image} />
+        <TitleStyled>{texte}</TitleStyled>
       </ContainerStyled>
     </SectionStyled>
   )

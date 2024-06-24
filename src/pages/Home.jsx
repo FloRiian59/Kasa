@@ -6,7 +6,10 @@ import '../assets/style/Home.css'
 function Home() {
   return (
     <div>
-      <Banner />
+      <Banner
+        image={'../../src/assets/image/bgImage1.jpg'}
+        texte="Chez vous et partout ailleurs"
+      />
       <div className="section-logements">
         <div className="container-logements">
           <Thumb logements={logements} />

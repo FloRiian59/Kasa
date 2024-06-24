@@ -239,7 +239,7 @@
 @media (max-width: 768px) {
   .container-desc,
   .container-equip {
-    width: 80%;
+    width: 95%;
   }
   .dropdowns {
     flex-direction: column;
@@ -280,6 +280,10 @@
   }
   .collapse-dropdown {
     margin: 0;
-    width: 90%;
+    width: 92%;
+  }
+  .frame {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }

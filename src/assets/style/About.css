@@ -19,13 +19,13 @@
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 25px;
   height: 54px;
 }
 .collapse-title {
   color: white;
   font-size: 24px;
   font-weight: 700;
+  margin-left: 10px;
 }
 .collapse-content {
   font-size: 18px;
@@ -42,7 +42,7 @@
   position: relative;
   z-index: -1;
   max-height: 0px;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .extend {
   max-height: 100px;
@@ -51,20 +51,30 @@
 .fa-solid {
   color: white;
   cursor: pointer;
-  animation: none;
 }
 button {
   background-color: transparent;
   border: none;
   font-size: 25px;
+  margin-right: 10px;
 }
 @media (max-width: 1024px) {
   .collapse-dropdown {
     margin-left: 30px;
     margin-right: 30px;
+    height: 40px;
   }
+
   .frame {
     margin-left: 30px;
     margin-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .collapse-container {
+    align-items: center;
+  }
+  .collapse-dropdown {
+    height: 30px;
   }
 }

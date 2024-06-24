@@ -92,7 +92,7 @@ const Header = () => {
               isActive ? 'active-link' : 'non-active-link '
             }
           >
-            <LiStyled>A propos</LiStyled>
+            <LiStyled>À propos</LiStyled>
           </NavLink>
         </UlStyled>
       </NavStyled>
