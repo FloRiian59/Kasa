@@ -16,9 +16,9 @@ const Collapse = ({ title, content }) => {
           <h2 className="collapse-title">{title}</h2>
           <button onClick={display}>
             {isOpen ? ( // condition de l'état du chevron, si le contenue est affiché chevron vers le haut, sinon chevron vers le bas
-              <i className="fa-solid fa-chevron-up"></i>
-            ) : (
               <i className="fa-solid fa-chevron-down"></i>
+            ) : (
+              <i className="fa-solid fa-chevron-down rotation"></i>
             )}
           </button>
         </div>
