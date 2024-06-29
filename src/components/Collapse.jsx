@@ -6,7 +6,7 @@ const Collapse = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false) // Valeur par défaut = false
 
   const display = () => {
-    setIsOpen(!isOpen) // on définis setOpen comme étant l'inverse de setIsOpen (setIsOpen = false | isOpen = true)
+    setIsOpen(!isOpen) // on définis setIsOpen comme étant l'inverse de IsOpen (setIsOpen = false | isOpen = true)
   }
   return (
     // On affiche le collapse 'replié' par défaut et on l'ouvre au clique
